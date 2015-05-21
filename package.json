@@ -1,0 +1,31 @@
+{
+  "name": "web",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "jade": "jade src/**.jade --out dist -P -w",
+    "stylus": "stylus src/**.styl --out dist -w",
+    "js": "uglifyjs ./src/js/main.js -o ./dist/js/main.js -w",
+    "static": "watch './bin/cp.sh' ./static",
+    "watch": "npm run jade & npm run stylus & watch 'npm run js' ./src/js/ & npm run static",
+    "build": " ./bin/cp.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/arnauddri/bootstrap-seed"
+  },
+  "author": "= <=>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/arnauddri/bootstrap-seed/issues"
+  },
+  "homepage": "https://github.com/arnauddri/bootstrap-seed",
+  "devDependencies": {
+    "jade": "^1.9.2",
+    "stylus": "^0.50.0",
+    "uglifyjs": "^2.4.10",
+    "watch": "^0.14.0"
+  }
+}
